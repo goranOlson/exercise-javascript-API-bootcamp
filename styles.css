@@ -12,6 +12,7 @@ h1 {
 #output {
     display: grid;
     grid-template-columns: auto;
+    align-content: flex-start;
     row-gap: 8px;
     width: 100%;
     max-width: 800px;

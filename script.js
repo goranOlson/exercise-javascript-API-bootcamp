@@ -32,15 +32,39 @@
 
 /* 2.1  - 2.3 */
 
-const output = document.getElementById('output');
+// const output = document.getElementById('output');
 
-fetch('https://majazocom.github.io/Data/dogs.json')
-    .then((response) => response.json())
+// fetch('https://majazocom.github.io/Data/dogs.json')
+//     .then((response) => response.json())
+//     .then((data) => {
+//         // data.forEach(dog => { console.log(dog.name) })
+//         data.forEach(dog => {
+//             const item = `<div class="item">${dog.name}</div>`;
+//             output.insertAdjacentHTML('beforeend', item);
+//         });
+//     })
+//     .catch((error) => console.error('Error:', error) )
+
+
+/* 3.1 */
+
+const out = document.getElementById(output);
+
+fetch('https://majazocom.github.io/Data/books.json')
+    .then((repsonse) => repsonse.json())
     .then((data) => {
-        // data.forEach(dog => { console.log(dog.name) })
-        data.forEach(dog => {
-            const item = `<div class="item">${dog.name}</div>`;
-            output.insertAdjacentHTML('beforeend', item);
+        console.log(data);
+        data.forEach(b => {
+            if (b.pages < 500) {
+                const item = `<div class="item">${b.author}: ${b.title}, ${b.pages} pages, [${b.genre}]</div>`;
+                output.insertAdjacentHTML('beforeend', item);
+            }
         });
     })
-    .catch((error) => console.error('Error:', error) )
+
+
+
+
+
+
+
