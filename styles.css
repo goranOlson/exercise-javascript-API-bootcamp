@@ -19,10 +19,75 @@ h1 {
     height: auto;
     min-height: 400px;
     padding: 20px;
-    border: 1px solid #aaa;
-    border-radius: 5px;
+    /* border: 1px solid #aaa;
+    border-radius: 5px; */
+    border-top: 1px solid black;
 }
 
 .item {
     width: 100%;
+    display: flex;
+
 }
+
+.person {
+    
+    display: grid;
+    grid-template-areas:
+        "image name attending"
+        "image allergies allergies";
+    grid-template-columns: max-content auto max-content;
+    grid-template-rows: auto auto;
+    justify-content: normal;
+    align-items: center;
+    border-color: #555;
+    /* border: 1px solid #aaa; */
+    /* border-radius: 7px; */
+    box-shadow: 1px 1px 1px #aaa;
+    box-shadow: 0px 0px 11px #aaa;
+    padding: 4px;
+}
+
+.person img {
+    grid-area: image;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+
+.person .name {
+    grid-area: name;
+    font-weight: bold;
+    width: 100%;
+    /* background-color: #ddf; */
+}
+
+.person .attending {
+    grid-area: attending;
+    color: darkgreen;
+    font-weight: bold;
+    width: max-content;
+    /* background-color: #afa; */
+}
+
+.person .allergies {
+    grid-area: allergies;
+    width: 100%;
+    /* background-color: #aaa; */
+}
+
+
+.person .name,
+.person .attending,
+.person .allergies {
+    padding-inline: 20px;
+}
+/*
+    img name, age attending
+    img allergies
+*/
